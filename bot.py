@@ -9,9 +9,24 @@ from aiogram.utils import executor
 bot = Bot(token=tg_bot_token)
 dp = Dispatcher(bot)
 
-@dp.message_handler(commands=["start"])
-async def start_command(message: types.Message):
-    await message.reply("Привіт, напиши місто і дивись погоду")
+#@dp.message_handler(commands=["start"])
+#async def start_command(message: types.Message):
+#    await message.reply("Привіт, напиши місто і дивись погоду")
+@dp.message_handler(commands=['start'])
+async def alarm(message: types.Message):
+    keyboard_markup = types.InlineKeyboardMarkup()
+    user_id_btn = types.InlineKeyboardButton('Получить ID пользывателя из Inline кнопки', callback_data='user_id')
+    x = f"{message.from_user.username}"
+
+    if "Ernest_M" == f"{message.from_user.username}":
+        await message.answer(f"Hi")
+    elif "roshenkavika" == f"{message.from_user.username}":
+        await message.answer(f"Привіт, Булочка")
+    elif "ValentinDesign" == f"{message.from_user.username}":
+        await message.answer(f"Петух, шоти хочеш ?!")
+        await message.answer(f"Ладно, напиши місто і гляди погоду, тварина!")
+    else:
+        await message.answer(f"Привіт, {message.from_user.username}, напиши місто і дивись погоду")
 
 @dp.message_handler()
 async def get_weather(message: types.Message):
