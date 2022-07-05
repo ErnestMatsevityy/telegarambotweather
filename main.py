@@ -1,1 +1,3 @@
-print ("hello")
+print (x)
+
+x = 'Hi'
