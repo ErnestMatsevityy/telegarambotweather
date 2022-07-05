@@ -22,6 +22,7 @@ async def alarm(message: types.Message):
         await message.answer(f"Hi")
     elif "roshenkavika" == f"{message.from_user.username}":
         await message.answer(f"Привіт, Булочка")
+        await message.answer(f"Напиши місто і дивись погоду")
     elif "ValentinDesign" == f"{message.from_user.username}":
         await message.answer(f"Петух, шоти хочеш ?!")
         await message.answer(f"Ладно, напиши місто і гляди погоду, тварина!")
